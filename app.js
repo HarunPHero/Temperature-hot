@@ -3,6 +3,9 @@ function weather() {
     const inputText = document.getElementById('inputText').value;
     const apiKey = 'be41a330c7cde91f3b42dd660d4a3f50';
     const apiBase = 'https://api.openweathermap.org/data/2.5/weather';
+    if (inputText == "") {
+        alert('invalid address')
+    }
     
     const url = `${apiBase}?q=${inputText}&units=metric&appid=${apiKey}`
     fetch(url)
@@ -43,9 +46,7 @@ function weather() {
 const search = document.getElementById('search').addEventListener('click', function () {
     // const inputText = document.getElementById('inputText').value;
     // console.log(inputText)
-    if (inputText == "") {
-        alert('invalid address')
-    }
+    
     
     weather();
 
