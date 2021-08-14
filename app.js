@@ -14,34 +14,14 @@ function weather() {
 
             const cityname = data.name;
             const cityWeather = data.weather[0].main;
-            const temp = data.coord.lat
+            const temp = data.main.temp;
+            const weatherIcon = document.getElementById('icon').setAttribute('src', `http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`)
 
             document.getElementById('weather').innerText = cityWeather;
             document.getElementById('city').innerText = cityname;
-            document.getElementById('temp').innerText = temp;
-            if (cityWeather === "Haze") {
-                document.getElementById('image').src = "https://openweathermap.org/img/wn/50d@2x.png";
-            }
-            if (cityWeather === "Rain") {
-                document.getElementById('image').src = "https://openweathermap.org/img/wn/10d@2x.png";
-
-            }
-
-            if (cityWeather === "Clouds") {
-                document.getElementById('image').src = "https://openweathermap.org/img/wn/04n@2x.png";
-
-            }
-            if (cityWeather === "Storm") {
-                document.getElementById('image').src = "https://assets.msn.com/bundles/v1/weather/latest/MostlyCloudyDayV2.svg";
-
-
-            }
-            if(cityWeather ==="Clear"){
-                document.getElementById('image').src ="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/apple/285/sun-behind-cloud_26c5.png"
-            }
-
-
-        })
+            document.getElementById('temp').innerText = temp + '°C';//to type degree sign press ALT & type 0176 in the number keypad;
+            document.getElementById('icon').innerText = weatherIcon;
+            })
 }
 const search = document.getElementById('search').addEventListener('click', function () {
     // const inputText = document.getElementById('inputText').value;
@@ -49,6 +29,7 @@ const search = document.getElementById('search').addEventListener('click', funct
     
     
     weather();
+    document.getElementById('inputText').value = ""
 
 })
 
