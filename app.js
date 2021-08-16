@@ -13,14 +13,24 @@ function weather() {
         .then(data => {
 
             const cityname = data.name;
-            const cityWeather = data.weather[0].main;
+            const cityWeather = data.weather[0].description;
             const temp = data.main.temp;
             const weatherIcon = document.getElementById('icon').setAttribute('src', `http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`)
-
+            
+            
+            const wind = data.wind.speed + "/h";
+            const country = data.sys.country;
+            const humidity = data.main.humidity;
+                        
             document.getElementById('weather').innerText = cityWeather;
             document.getElementById('city').innerText = cityname;
             document.getElementById('temp').innerText = temp + '°C';//to type degree sign press ALT & type 0176 in the number keypad;
             document.getElementById('icon').innerText = weatherIcon;
+            document.getElementById('wind').innerText = `Wind: ${wind}`;
+            document.getElementById('country').innerText = `Country: ${country}`;
+            document.getElementById('humidity').innerText = `Humidity: ${humidity}`
+            
+            
             })
 }
 const search = document.getElementById('search').addEventListener('click', function () {
