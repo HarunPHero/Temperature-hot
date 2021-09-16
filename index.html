@@ -18,20 +18,29 @@
             background-size: cover;
             height: 100vh;
         }
+        .btn{
+            background-image: linear-gradient(to right,rgb(29, 160, 236),rgb(161, 213, 255));
+        }
+        .inputText{
+            border-radius: 30px;
+        }
     </style>
 </head>
 
 <body>
     <div class="container">
         <form class="col-md-6 m-auto py-5">
-            <div class="input-group mb-3">
-                <input id="inputText" type="text" class="form-control" placeholder="Enter a location for Weather ...">
+            <div class="input-group mb-3 mt-5">
+                <input id="inputText" type="text" class="form-control" placeholder="🔍 Enter your location" >
                 <div class="input-group-append">
-                    <button id="search" type="button" class="btn btn-danger">Search</button>
+                    <button id="search" type="button" class="btn">Search</button>
+
                 </div>
             </div>
+
         </form>
-        <div class="weather-status text-white text-center">
+        <h3  id="error-message" class="text-danger text-center"></h3>
+        <div id="weather-status" class="weather-status text-white text-center">
             <img id="icon" src="http://openweathermap.org/img/wn/10d@2x.png" alt="">
             <h1 id="city">--------</h1>
             <h3 id="temp"><span>--.--</span>&deg;C</h3>

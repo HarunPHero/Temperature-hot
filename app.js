@@ -1,4 +1,10 @@
-
+const input = document.getElementById("inputText");
+input.addEventListener("keyup", function(event) {
+  if (event.keyCode === 13) {
+   event.preventDefault();
+   document.getElementById("search").click();
+  }
+});
 function weather() {
     const inputText = document.getElementById('inputText').value;
     const apiKey = 'be41a330c7cde91f3b42dd660d4a3f50';
@@ -11,6 +17,8 @@ function weather() {
     fetch(url)
         .then(res => res.json())
         .then(data => {
+            const errortag = document.getElementById('error-message');
+            errortag.innerText = ""
 
             const cityname = data.name;
             const cityWeather = data.weather[0].description;
@@ -32,6 +40,8 @@ function weather() {
             
             
             })
+            .catch(error => errormass("Sorry, location not found"))
+            
 }
 const search = document.getElementById('search').addEventListener('click', function () {
     // const inputText = document.getElementById('inputText').value;
@@ -42,4 +52,9 @@ const search = document.getElementById('search').addEventListener('click', funct
     document.getElementById('inputText').value = ""
 
 })
-
+const errormass = error => {
+    const errortag = document.getElementById('error-message');
+    errortag.innerText = error
+    
+    
+};
