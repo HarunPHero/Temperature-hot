@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<link rel="shortcut icon"
-    href="https://raw.githubusercontent.com/ProgrammingHero1/temperature-hot-solution/master/images/favicon.png"
-    type="image/x-icon">
+    <link rel="shortcut icon" href="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png" type="image/x-icon">nk
 
 <head>
     <title>Temperature Hot</title>
@@ -18,10 +16,12 @@
             background-size: cover;
             height: 100vh;
         }
-        .btn{
-            background-image: linear-gradient(to right,rgb(29, 160, 236),rgb(161, 213, 255));
+
+        .btn {
+            background-image: linear-gradient(to right, rgb(101, 98, 233), rgb(89, 112, 247));
         }
-        .inputText{
+
+        .inputText {
             border-radius: 30px;
         }
     </style>
@@ -31,27 +31,20 @@
     <div class="container">
         <form class="col-md-6 m-auto py-5">
             <div class="input-group mb-3 mt-5">
-                <input id="inputText" type="text" class="form-control" placeholder="🔍 Enter your location" >
+                <input id="inputText" type="text" class="form-control" placeholder="🔍 Enter your location">
                 <div class="input-group-append">
-                    <button id="search" type="button" class="btn">Search</button>
+                    <button id="search" type="button" class="btn"> <span style="font-weight: 700;color: white;">Search</span></button>
 
                 </div>
             </div>
 
         </form>
-        <h3  id="error-message" class="text-danger text-center"></h3>
+        <h3 id="error-message" class="text-danger text-center"></h3>
         <div id="weather-status" class="weather-status text-white text-center">
-            <img id="icon" src="http://openweathermap.org/img/wn/10d@2x.png" alt="">
-            <h1 id="city">--------</h1>
-            <h3 id="temp"><span>--.--</span>&deg;C</h3>
-            <h1 id="weather" class="lead">----</h1>
-
-            <h3 id="wind">Wind:-----</h3>
-            <h3 id="humidity">Humidity:-----</h3>
-            <h3 id="country">Country:---</h3>
-            <img id="countryicon"src="" alt="">
-
-
+            <h3 style="font-weight: 900;" class="text-primary">check your <span><img
+                        src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png" alt=""></span> status in <span
+                    class="text-danger">temperature-hot</span></h3>
+            <h3 id="error-message"></h3>
         </div>
     </div>
     <script src="app.js"></script>
